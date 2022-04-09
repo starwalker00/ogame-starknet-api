@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-let leaderboard = require('../../data/leaderboard.json');
+let leaderboard = require('../../public/leaderboard.json');
 
 const leaderboardRepo = {
     getAll: () => leaderboard,
@@ -24,7 +24,7 @@ function updateOrCreate(item) {
 }
 
 function saveData() {
-    fs.writeFileSync('data/leaderboard.json', JSON.stringify(leaderboard, null, 4));
+    fs.writeFileSync('public/leaderboard.json', JSON.stringify(leaderboard, null, 4));
 }
 
 export default leaderboardRepo;
